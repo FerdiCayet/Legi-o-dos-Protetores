@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Parkinsans:wght@300..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+#form-container { display: none; }
+#noScript {
+    font-family: 'Parkinsans', 'Helvetica Neue', Arial, sans-serif;
+    display: block;
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+}
+.js {
+    display: block;
+    margin: 30px auto;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 3px solid #822236;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+.js::after {
+    content: "JS";
+    font-size: 3.5rem;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    position: absolute;
+    color: #822236;
+    bottom: -5px;
+    right: 0px;
+    width: 70px;
+    height: 70px;
+}
+#noScript pre {
+    white-space: pre-line;
+    color: #660000;
+    background-color: #202020;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: 1px solid #822236;
+    margin-bottom: 30px;
+}
+a {
+    color: #822236;
+    text-decoration: underline;
+    text-underline-offset: 0.5px;
+    transition: all 0.2s ease;
+}
+a:hover {
+    text-underline-offset: 3px;
+    text-decoration-color: #660000;
+}
+
+@media screen and (max-width: 600px) {
+    #noScript pre { font-size: small; }
+}
+@media screen and (max-width: 490px) {
+    #noScript pre {
+        font-size: x-small;
+        padding: 10px 5px;
+    }
+}
