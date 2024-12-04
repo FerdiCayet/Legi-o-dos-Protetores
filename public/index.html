@@ -10,6 +10,11 @@
         <meta property="og:locale" content="pt_BR">
         <meta property="og:url" content="https://form-legiaodosprotetores.vercel.app">
         <meta name="theme-color" content="#730000">
+        <link rel="icon" type="image/x-icon" href="https://form-legiaodosprotetores.vercel.app/imgs/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/style.css">
         <noscript><link rel="stylesheet" href="./css/no-js.css"></noscript>
         <title>Cadastro de Heróis: Legião dos Protetores</title>
     </head>
@@ -44,5 +49,202 @@
                 </pre>
             </div>
         </noscript>
+        <div id="form-container">
+            <div class="template-heading">
+                <h2 class="title-h2">Cadastro de Heróis: Legião dos Protetores</h2>
+            </div>
+            <dialog id="errorDialog">
+                <p id="dialogMessage"></p>
+                <button id="closeDialog" class="btn">Fechar</button>
+            </dialog>
+            <div class="tab-status">
+                <div class="line">
+                    <span class="tab active"><span class="t-icon ip"></span></span>
+                    <span class="tab"><span class="t-icon sh"></span></span>
+                    <span class="tab"><span class="t-icon at"></span></span>
+                    <span class="tab"><span class="t-icon co"></span></span>
+                </div>
+            </div>
+            <div id="form-content">
+                <div class="form-info">
+                    <p>Cadastre-se para se tornar um membro da elite de heróis da Legião dos Protetores. Se você possui superpoderes, habilidades extraordinárias e está pronto para enfrentar inimigos, invasões e outros perigos, você está no lugar certo!</p>
+                    <p>Junte-se a nós e faça a diferença, protegendo o mundo e seus habitantes. Seja um herói e lute ao lado dos melhores!</p>
+                </div>
+                <form id="myForm">
+                    <div id="personalInfo" class="section active">
+                        <div class="section-heading">
+                            <span class="section-title">Informações Pessoais</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Digite seu endereço de e-mail válido" required>
+                            <label for="email">E-mail:</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="secretID" name="secretID" placeholder="Informe o nome de código ou identidade secreta" required>
+                            <label for="secretID">Nome de Código/Identidade Secreta:</label>
+                        </div>
+                        <fieldset>
+                            <legend>Gênero:</legend>
+                            <div class="radio-group">
+                                <input type="radio" id="male" name="gender" value="Masculino" required>
+                                <label for="male">Masculino</label>
+                            </div>
+                            <div class="radio-group">
+                                <input type="radio" id="female" name="gender" value="Feminino" required>
+                                <label for="female">Feminino</label>
+                            </div>
+                            <div class="radio-group">
+                                <input type="radio" id="noReply" name="gender" value="Prefiro não responder" required>
+                                <label for="noReply">Prefiro não responder</label>
+                            </div>
+                        </fieldset>
+                        <div class="form-group">
+                            <input type="date" id="birthdate" name="birthdate">
+                            <label for="birthdate">Data de nascimento: </label>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn upload">
+                                <span class="attachment-file">Adicionar anexo</span>
+                                <input type="file" id="heroPhoto" name="filesInput[]" accept="image/*" multiple>
+                            </button>
+                            <label for="heroPhoto">Anexe sua foto de herói: </label>
+                        </div>
+                    </div>
+                    <div id="superpowers" class="section">
+                        <div class="section-heading">
+                            <span class="section-title">Superpoderes e Habilidades</span>
+                        </div>
+                        <fieldset>
+                            <legend>Superpoderes: </legend>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="fotocinese" name="superPoderes" value="Fotocinese">
+                                <label for="fotocinese">Fotocinese</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="invisibilidade" name="superPoderes" value="Invisibilidade">
+                                <label for="invisibilidade">Invisibilidade</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="teletransportado" name="superPoderes" value="Teletransportado">
+                                <label for="teletransportado">Teletransportado</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="telecinese" name="superPoderes" value="Telecinese">
+                                <label for="telecinese">Telecinese</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="telepatia" name="superPoderes" value="Telepatia">
+                                <label for="telepatia">Telepatia</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="superForca" name="superPoderes" value="Super-força">
+                                <label for="superForca">Super-força</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="velocista" name="superPoderes" value="Velocista">
+                                <label for="velocista">Velocista</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="other" name="superPoderes" value="Outro">
+                                <label for="other">Outro</label>
+                                <input type="text" id="otherText" name="other" placeholder="Digite os poderes" disabled>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-group">
+                            <input type="text" id="specialSkills" name="specialSkills" placeholder="Informe sua habilidade especial">
+                            <label for="specialSkills">Habilidades Especiais: </label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="equipments" name="equipments" placeholder="Informe seus equipamentos">
+                            <label for="equipments">Equipamentos: </label>
+                        </div>
+                    </div>
+                    <div id="operation" class="section">
+                        <div class="section-heading">
+                            <span class="section-title">Atuação</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="origin" name="origin" placeholder="Digite de onde vem?" required>
+                            <label for="origin">Origem: </label>
+                        </div>
+                        <div class="form-group">
+                            <select id="affiliation" name="affiliation" required>
+                                <option value="" selected disabled>Escolha uma afiliação</option>
+                                <option value="Defensores">Defensores</option>
+                                <option value="Esquadrão Suicida">Esquadrão Suicida</option>
+                                <option value="Guardiões da Galáxia">Guardiões da Galáxia</option>
+                                <option value="Herói Livre">Herói Livre</option>
+                                <option value="Inumanos">Inumanos</option>
+                                <option value="Jovens Titãs">Jovens Titãs</option>
+                                <option value="Lanternas Verdes">Lanternas Verdes</option>
+                                <option value="Legends">Legends</option>
+                                <option value="Liga da Justiça">Liga da Justiça</option>
+                                <option value="Liga da Justiça Sombria">Liga da Justiça Sombria</option>
+                                <option value="Nova Corp">Nova Corp</option>
+                                <option value="Quarteto Fantástico">Quarteto Fantástico</option>
+                                <option value="Runaways">Runaways</option>
+                                <option value="Sociedade da Justiça da América">Sociedade da Justiça da América</option>
+                                <option value="Thunderbolts">Thunderbolts</option>
+                                <option value="Vingadores">Vingadores</option>
+                                <option value="Vought">Vought</option>
+                                <option value="Watchmen">Watchmen</option>
+                                <option value="X-Force">X-Force</option>
+                                <option value="X-Men">X-Men</option>
+                                <option value="Sem Afiliação">Sem Afiliação</option>
+                            </select>
+                            <label for="affiliation">Afiliação: </label>
+                        </div>
+                        <div class="form-group">
+                            <select id="areaOfOperation" name="areaOfOperation" required>
+                                <option value="" selected disabled>Selecione uma opção</option>
+                                <option value="Cidade">Cidade</option>
+                                <option value="Estado">Estado</option>
+                                <option value="País">País</option>
+                                <option value="Global">Global</option>
+                            </select>                          
+                            <label for="areaOfOperation">Área de Atuação: </label>
+                        </div>
+                        <div class="form-group" id="specificAreaGroup">
+                            <input type="text" id="specificArea" name="specificArea" placeholder="Especifique a área de atuação">
+                            <label for="specificArea">Especifique a área de atuação: </label>
+                        </div>
+                        <div class="form-group">
+                            <div class="button-group">
+                                <button type="button" id="decrease">-</button>
+                                <button type="button" id="increase">+</button>
+                            </div>
+                            <input type="number" id="missionsCompleted" inputmode="numeric" name="missionsCompleted" placeholder="Quantas missões você completou?" min="0">
+                            <label for="missionsCompleted">Missões Completadas: </label>
+                        </div>
+                    </div>
+                    <div id="contact" class="section">
+                        <div class="section-heading">
+                            <span class="section-title">Contato</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Digite o número de celular" required>
+                            <label for="phone">Celular: </label>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <textarea id="msg" name="msg" spellcheck="true" placeholder="Conte-nos como você pode contribuir para a Legião de Protetores!" title="Seja o herói que o mundo precisa! Suas ideias podem fazer a diferença."></textarea>
+                            <label for="msg">Mensagem para a Legião de Protetores: </label>
+                        </div>
+                        <div class="send-btn">
+                            <input type="submit" class="btn" value="Envie agora">
+                        </div>
+                    </div>
+                </form>
+                <div class="painel-btn">
+                    <button id="btnPrevious" class="btn">Anterior</button>
+                    <button id="btnNext" class="btn">Próximo</button>
+                </div>
+            </div>
+            <div class="notification">
+                <div class="toast-container"></div>
+            </div>
+        </div>
+        <script src="./js/script.js"></script>
     </body>
 </html>
